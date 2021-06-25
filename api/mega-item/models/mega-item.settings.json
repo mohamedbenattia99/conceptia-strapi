@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mega_items",
+  "info": {
+    "name": "MegaContent"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "products": {
+      "collection": "product",
+      "via": "mega_items",
+      "dominant": true
+    },
+    "mega_items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "mega-items.mega-items"
+    },
+    "product_category": {
+      "via": "mega_contents",
+      "model": "product-categories"
+    }
+  }
+}

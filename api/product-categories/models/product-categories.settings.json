@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "product_categories",
+  "info": {
+    "name": "product-categories"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "extraClass": {
+      "type": "string"
+    },
+    "subClass": {
+      "type": "string"
+    },
+    "products": {
+      "collection": "product",
+      "via": "product_categories",
+      "dominant": true
+    },
+    "mega_contents": {
+      "collection": "mega-item",
+      "via": "product_category"
+    }
+  }
+}

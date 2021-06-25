@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "order"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "customerPhoneNumber": {
+      "required": true,
+      "type": "biginteger"
+    },
+    "customerName": {
+      "required": true,
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "total": {
+      "type": "biginteger"
+    },
+    "valid": {
+      "type": "boolean"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "orders"
+    },
+    "customerFirstName": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "postalCode": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "products": {
+      "collection": "product"
+    }
+  }
+}

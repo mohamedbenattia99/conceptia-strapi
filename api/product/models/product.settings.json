@@ -1,0 +1,109 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "products",
+  "info": {
+    "name": "product"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "sale_price": {
+      "type": "decimal",
+      "required": false,
+      "private": true
+    },
+    "brand": {
+      "model": "brand"
+    },
+    "is_out_of_stock": {
+      "type": "boolean",
+      "default": false
+    },
+    "depot": {
+      "type": "integer"
+    },
+    "inventory": {
+      "type": "integer"
+    },
+    "variants": {
+      "type": "component",
+      "repeatable": true,
+      "component": "variants.variants"
+    },
+    "is_sale": {
+      "type": "boolean",
+      "default": false
+    },
+    "productNumber": {
+      "type": "string",
+      "required": true
+    },
+    "sku": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "specifications": {
+      "type": "component",
+      "repeatable": true,
+      "component": "specifications.specifications"
+    },
+    "description_title": {
+      "type": "string"
+    },
+    "description_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "thumbnail": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "description_list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "description-list.description-list",
+      "required": true
+    },
+    "product_categories": {
+      "via": "products",
+      "collection": "product-categories"
+    },
+    "mega_items": {
+      "via": "products",
+      "collection": "mega-item"
+    }
+  }
+}

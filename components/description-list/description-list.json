@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_description_list_description_lists",
+  "info": {
+    "name": "description_list",
+    "icon": "arrows-alt"
+  },
+  "options": {},
+  "attributes": {
+    "desc_item": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

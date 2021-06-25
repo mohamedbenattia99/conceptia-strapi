@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_specifications_specifications",
+  "info": {
+    "name": "specifications",
+    "icon": "calendar-minus"
+  },
+  "options": {},
+  "attributes": {
+    "spec_name": {
+      "type": "string",
+      "required": true
+    },
+    "spec_value": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

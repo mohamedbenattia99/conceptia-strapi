@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_mega_items_mega_items",
+  "info": {
+    "name": "megaItems",
+    "icon": "ad"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

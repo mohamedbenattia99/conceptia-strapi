@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/mega-items",
+      "handler": "mega-item.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/mega-items/count",
+      "handler": "mega-item.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/mega-items/:id",
+      "handler": "mega-item.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/mega-items",
+      "handler": "mega-item.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/mega-items/:id",
+      "handler": "mega-item.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/mega-items/:id",
+      "handler": "mega-item.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
