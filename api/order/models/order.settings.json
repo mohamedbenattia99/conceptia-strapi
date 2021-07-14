@@ -45,6 +45,12 @@
     },
     "products": {
       "collection": "product"
+    },
+    "uid": {
+      "type": "uid",
+      "minLength": 8,
+      "private": false,
+      "maxLength": 10
     }
   }
 }
