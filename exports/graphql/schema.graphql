@@ -283,6 +283,14 @@ type createMegaItemPayload {
   megaItem: MegaItem
 }
 
+input createNewsletterInput {
+  data: NewsletterInput
+}
+
+type createNewsletterPayload {
+  newsletter: Newsletter
+}
+
 input createOrderInput {
   data: OrderInput
 }
@@ -367,6 +375,14 @@ input deleteMegaItemInput {
 
 type deleteMegaItemPayload {
   megaItem: MegaItem
+}
+
+input deleteNewsletterInput {
+  where: InputID
+}
+
+type deleteNewsletterPayload {
+  newsletter: Newsletter
 }
 
 input deleteOrderInput {
@@ -514,6 +530,12 @@ input editMegaItemInput {
   products: [ID]
   mega_items: [editComponentMegaItemsMegaItemInput]
   product_category: ID
+  created_by: ID
+  updated_by: ID
+}
+
+input editNewsletterInput {
+  email: String
   created_by: ID
   updated_by: ID
 }
@@ -712,7 +734,7 @@ input MegaItemInput {
   updated_by: ID
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Banner | BannerConnection | BannerAggregator | BannerGroupBy | BannerConnectionId | BannerConnectionCreated_at | BannerConnectionUpdated_at | BannerConnectionSlug | BannerConnectionName | BannerConnectionCreated_by | BannerConnectionUpdated_by | createBannerPayload | updateBannerPayload | deleteBannerPayload | Brand | BrandConnection | BrandAggregator | BrandGroupBy | BrandConnectionId | BrandConnectionCreated_at | BrandConnectionUpdated_at | BrandConnectionName | BrandConnectionSlug | BrandConnectionCreated_by | BrandConnectionUpdated_by | createBrandPayload | updateBrandPayload | deleteBrandPayload | MegaItem | MegaItemConnection | MegaItemAggregator | MegaItemGroupBy | MegaItemConnectionId | MegaItemConnectionCreated_at | MegaItemConnectionUpdated_at | MegaItemConnectionProduct_category | MegaItemConnectionCreated_by | MegaItemConnectionUpdated_by | createMegaItemPayload | updateMegaItemPayload | deleteMegaItemPayload | Order | OrderConnection | OrderAggregator | OrderGroupBy | OrderConnectionId | OrderConnectionCreated_at | OrderConnectionUpdated_at | OrderConnectionCustomerPhoneNumber | OrderConnectionCustomerName | OrderConnectionDate | OrderConnectionTotal | OrderConnectionValid | OrderConnectionUser | OrderConnectionCustomerFirstName | OrderConnectionAddress | OrderConnectionPostalCode | OrderConnectionCity | OrderConnectionUid | OrderConnectionCreated_by | OrderConnectionUpdated_by | createOrderPayload | updateOrderPayload | deleteOrderPayload | ProductCategories | ProductCategoriesConnection | ProductCategoriesAggregator | ProductCategoriesGroupBy | ProductCategoriesConnectionId | ProductCategoriesConnectionCreated_at | ProductCategoriesConnectionUpdated_at | ProductCategoriesConnectionName | ProductCategoriesConnectionSlug | ProductCategoriesConnectionExtraClass | ProductCategoriesConnectionSubClass | ProductCategoriesConnectionCreated_by | ProductCategoriesConnectionUpdated_by | createProductCategoryPayload | updateProductCategoryPayload | deleteProductCategoryPayload | Product | ProductConnection | ProductAggregator | ProductAggregatorSum | ProductAggregatorAvg | ProductAggregatorMin | ProductAggregatorMax | ProductGroupBy | ProductConnectionId | ProductConnectionCreated_at | ProductConnectionUpdated_at | ProductConnectionTitle | ProductConnectionPrice | ProductConnectionBrand | ProductConnectionIs_out_of_stock | ProductConnectionDepot | ProductConnectionInventory | ProductConnectionIs_sale | ProductConnectionProductNumber | ProductConnectionSku | ProductConnectionDescription | ProductConnectionDescription_title | ProductConnectionDescription_image | ProductConnectionThumbnail | ProductConnectionCreated_by | ProductConnectionUpdated_by | createProductPayload | updateProductPayload | deleteProductPayload | Promotions | PromotionsConnection | PromotionsAggregator | PromotionsGroupBy | PromotionsConnectionId | PromotionsConnectionCreated_at | PromotionsConnectionUpdated_at | PromotionsConnectionName | PromotionsConnectionSlug | PromotionsConnectionCreated_by | PromotionsConnectionUpdated_by | createPromotionPayload | updatePromotionPayload | deletePromotionPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | UploadFileConnectionCreated_by | UploadFileConnectionUpdated_by | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsRoleConnectionCreated_by | UsersPermissionsRoleConnectionUpdated_by | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserAggregatorSum | UsersPermissionsUserAggregatorAvg | UsersPermissionsUserAggregatorMin | UsersPermissionsUserAggregatorMax | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionFirstName | UsersPermissionsUserConnectionLastName | UsersPermissionsUserConnectionAddress | UsersPermissionsUserConnectionPostalCode | UsersPermissionsUserConnectionBirth_date | UsersPermissionsUserConnectionPhoneNumber | UsersPermissionsUserConnectionCity | UsersPermissionsUserConnectionUserOrders | UsersPermissionsUserConnectionCreated_by | UsersPermissionsUserConnectionUpdated_by | createUserPayload | updateUserPayload | deleteUserPayload | ComponentDescriptionListDescriptionList | ComponentItemsItems | ComponentMegaContentMegaContent | ComponentMegaItemsMegaItems | ComponentProductSizeSizes | ComponentSpecificationsSpecifications | ComponentVariantsItems | ComponentVariantsVariants
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Banner | BannerConnection | BannerAggregator | BannerGroupBy | BannerConnectionId | BannerConnectionCreated_at | BannerConnectionUpdated_at | BannerConnectionSlug | BannerConnectionName | BannerConnectionCreated_by | BannerConnectionUpdated_by | createBannerPayload | updateBannerPayload | deleteBannerPayload | Brand | BrandConnection | BrandAggregator | BrandGroupBy | BrandConnectionId | BrandConnectionCreated_at | BrandConnectionUpdated_at | BrandConnectionName | BrandConnectionSlug | BrandConnectionCreated_by | BrandConnectionUpdated_by | createBrandPayload | updateBrandPayload | deleteBrandPayload | MegaItem | MegaItemConnection | MegaItemAggregator | MegaItemGroupBy | MegaItemConnectionId | MegaItemConnectionCreated_at | MegaItemConnectionUpdated_at | MegaItemConnectionProduct_category | MegaItemConnectionCreated_by | MegaItemConnectionUpdated_by | createMegaItemPayload | updateMegaItemPayload | deleteMegaItemPayload | Newsletter | NewsletterConnection | NewsletterAggregator | NewsletterGroupBy | NewsletterConnectionId | NewsletterConnectionCreated_at | NewsletterConnectionUpdated_at | NewsletterConnectionEmail | NewsletterConnectionCreated_by | NewsletterConnectionUpdated_by | createNewsletterPayload | updateNewsletterPayload | deleteNewsletterPayload | Order | OrderConnection | OrderAggregator | OrderGroupBy | OrderConnectionId | OrderConnectionCreated_at | OrderConnectionUpdated_at | OrderConnectionCustomerPhoneNumber | OrderConnectionCustomerName | OrderConnectionDate | OrderConnectionTotal | OrderConnectionValid | OrderConnectionUser | OrderConnectionCustomerFirstName | OrderConnectionAddress | OrderConnectionPostalCode | OrderConnectionCity | OrderConnectionUid | OrderConnectionCreated_by | OrderConnectionUpdated_by | createOrderPayload | updateOrderPayload | deleteOrderPayload | ProductCategories | ProductCategoriesConnection | ProductCategoriesAggregator | ProductCategoriesGroupBy | ProductCategoriesConnectionId | ProductCategoriesConnectionCreated_at | ProductCategoriesConnectionUpdated_at | ProductCategoriesConnectionName | ProductCategoriesConnectionSlug | ProductCategoriesConnectionExtraClass | ProductCategoriesConnectionSubClass | ProductCategoriesConnectionCreated_by | ProductCategoriesConnectionUpdated_by | createProductCategoryPayload | updateProductCategoryPayload | deleteProductCategoryPayload | Product | ProductConnection | ProductAggregator | ProductAggregatorSum | ProductAggregatorAvg | ProductAggregatorMin | ProductAggregatorMax | ProductGroupBy | ProductConnectionId | ProductConnectionCreated_at | ProductConnectionUpdated_at | ProductConnectionTitle | ProductConnectionPrice | ProductConnectionBrand | ProductConnectionIs_out_of_stock | ProductConnectionDepot | ProductConnectionInventory | ProductConnectionIs_sale | ProductConnectionProductNumber | ProductConnectionSku | ProductConnectionDescription | ProductConnectionDescription_title | ProductConnectionDescription_image | ProductConnectionThumbnail | ProductConnectionCreated_by | ProductConnectionUpdated_by | createProductPayload | updateProductPayload | deleteProductPayload | Promotions | PromotionsConnection | PromotionsAggregator | PromotionsGroupBy | PromotionsConnectionId | PromotionsConnectionCreated_at | PromotionsConnectionUpdated_at | PromotionsConnectionName | PromotionsConnectionSlug | PromotionsConnectionCreated_by | PromotionsConnectionUpdated_by | createPromotionPayload | updatePromotionPayload | deletePromotionPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | UploadFileConnectionCreated_by | UploadFileConnectionUpdated_by | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsRoleConnectionCreated_by | UsersPermissionsRoleConnectionUpdated_by | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserAggregatorSum | UsersPermissionsUserAggregatorAvg | UsersPermissionsUserAggregatorMin | UsersPermissionsUserAggregatorMax | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionFirstName | UsersPermissionsUserConnectionLastName | UsersPermissionsUserConnectionAddress | UsersPermissionsUserConnectionPostalCode | UsersPermissionsUserConnectionBirth_date | UsersPermissionsUserConnectionPhoneNumber | UsersPermissionsUserConnectionCity | UsersPermissionsUserConnectionUserOrders | UsersPermissionsUserConnectionCreated_by | UsersPermissionsUserConnectionUpdated_by | createUserPayload | updateUserPayload | deleteUserPayload | ComponentDescriptionListDescriptionList | ComponentItemsItems | ComponentMegaContentMegaContent | ComponentMegaItemsMegaItems | ComponentProductSizeSizes | ComponentSpecificationsSpecifications | ComponentVariantsItems | ComponentVariantsVariants
 
 type Mutation {
   createBanner(input: createBannerInput): createBannerPayload
@@ -724,6 +746,9 @@ type Mutation {
   createMegaItem(input: createMegaItemInput): createMegaItemPayload
   updateMegaItem(input: updateMegaItemInput): updateMegaItemPayload
   deleteMegaItem(input: deleteMegaItemInput): deleteMegaItemPayload
+  createNewsletter(input: createNewsletterInput): createNewsletterPayload
+  updateNewsletter(input: updateNewsletterInput): updateNewsletterPayload
+  deleteNewsletter(input: deleteNewsletterInput): deleteNewsletterPayload
   createOrder(input: createOrderInput): createOrderPayload
   updateOrder(input: updateOrderInput): updateOrderPayload
   deleteOrder(input: deleteOrderInput): deleteOrderPayload
@@ -761,6 +786,71 @@ type Mutation {
   forgotPassword(email: String!): UserPermissionsPasswordPayload
   resetPassword(password: String!, passwordConfirmation: String!, code: String!): UsersPermissionsLoginPayload
   emailConfirmation(confirmation: String!): UsersPermissionsLoginPayload
+}
+
+type Newsletter {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  email: String
+  created_by: AdminUser
+  updated_by: AdminUser
+}
+
+type NewsletterAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type NewsletterConnection {
+  values: [Newsletter]
+  groupBy: NewsletterGroupBy
+  aggregate: NewsletterAggregator
+}
+
+type NewsletterConnectionCreated_at {
+  key: DateTime
+  connection: NewsletterConnection
+}
+
+type NewsletterConnectionCreated_by {
+  key: ID
+  connection: NewsletterConnection
+}
+
+type NewsletterConnectionEmail {
+  key: String
+  connection: NewsletterConnection
+}
+
+type NewsletterConnectionId {
+  key: ID
+  connection: NewsletterConnection
+}
+
+type NewsletterConnectionUpdated_at {
+  key: DateTime
+  connection: NewsletterConnection
+}
+
+type NewsletterConnectionUpdated_by {
+  key: ID
+  connection: NewsletterConnection
+}
+
+type NewsletterGroupBy {
+  id: [NewsletterConnectionId]
+  created_at: [NewsletterConnectionCreated_at]
+  updated_at: [NewsletterConnectionUpdated_at]
+  email: [NewsletterConnectionEmail]
+  created_by: [NewsletterConnectionCreated_by]
+  updated_by: [NewsletterConnectionUpdated_by]
+}
+
+input NewsletterInput {
+  email: String
+  created_by: ID
+  updated_by: ID
 }
 
 type Order {
@@ -1290,6 +1380,9 @@ type Query {
   megaItem(id: ID!): MegaItem
   megaItems(sort: String, limit: Int, start: Int, where: JSON): [MegaItem]
   megaItemsConnection(sort: String, limit: Int, start: Int, where: JSON): MegaItemConnection
+  newsletter(id: ID!): Newsletter
+  newsletters(sort: String, limit: Int, start: Int, where: JSON): [Newsletter]
+  newslettersConnection(sort: String, limit: Int, start: Int, where: JSON): NewsletterConnection
   order(id: ID!): Order
   orders(sort: String, limit: Int, start: Int, where: JSON): [Order]
   ordersConnection(sort: String, limit: Int, start: Int, where: JSON): OrderConnection
@@ -1355,6 +1448,15 @@ input updateMegaItemInput {
 
 type updateMegaItemPayload {
   megaItem: MegaItem
+}
+
+input updateNewsletterInput {
+  where: InputID
+  data: editNewsletterInput
+}
+
+type updateNewsletterPayload {
+  newsletter: Newsletter
 }
 
 input updateOrderInput {
