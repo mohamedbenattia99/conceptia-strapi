@@ -27,7 +27,7 @@
     "sale_price": {
       "type": "decimal",
       "required": false,
-      "private": true
+      "private": false
     },
     "brand": {
       "model": "brand"
@@ -98,12 +98,12 @@
       "required": true
     },
     "product_categories": {
-      "via": "products",
-      "collection": "product-categories"
+      "collection": "product-categories",
+      "via": "products"
     },
     "mega_items": {
-      "via": "products",
-      "collection": "mega-item"
+      "collection": "mega-item",
+      "via": "products"
     }
   }
 }

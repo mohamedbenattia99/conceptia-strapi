@@ -10,8 +10,8 @@
   },
   "attributes": {
     "products": {
-      "collection": "product",
       "via": "mega_items",
+      "collection": "product",
       "dominant": true
     },
     "mega_items": {
